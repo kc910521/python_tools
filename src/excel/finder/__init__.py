@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
 
-from ExcelReader import ExcelUtils
-from DBExecutor import DbUtils
+from src.excel.finder.ExcelReader import ExcelUtils
+from src.util.db.DBExecutor import DbUtils
 
 
 # 比对mysql苹果订单id和excel导出的某一列，
