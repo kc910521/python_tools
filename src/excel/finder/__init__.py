@@ -9,7 +9,7 @@ from src.util.db.DBExecutor import DbUtils
 # 寻找excel中比mysql中多了哪些订单
 def take_lost_id_list():
     exceltool = ExcelUtils('/home/caikun/.deepinwine/Deepin-WXWork/drive_c/users/caikun/Downloads/55024-20190725.xlsx')
-    dbut = DbUtils("192.168.6.1", "user", "pwd", "gamesdk_ios", 14051)
+    dbut = DbUtils("192.168.?.?", "user", "pwd", "gamesdk_ios", 14051)
 
     print("It's a rational plan ")
     lost_app_id = []
