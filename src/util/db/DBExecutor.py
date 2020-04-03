@@ -29,6 +29,21 @@ class DbUtils:
             self.db.close()
         return data
 
+    def fetch_list(self, sql):
+        # 使用 cursor() 方法创建一个游标对象 cursor
+        self.db.connect()
+        cursor = self.db.cursor()
+        try:
+            cursor.execute(sql)
+            data = cursor.fetchall()
+        except Exception as e:
+            print(e)
+            return None
+        finally:
+            cursor.close()
+            self.db.close()
+        return data
+
     def insert_one(self, sql):
         self.db.connect()
         cursor = self.db.cursor()
