@@ -9,7 +9,7 @@ from src.util.db.DBExecutor import DbUtils
 # 拼接输出
 #
 if __name__ == '__main__':
-    dbut = DbUtils("192.168.?.?", "work", "???????", "cps", 3306)
+    dbut = DbUtils("10.16.87.49", "work", "duoku2012", "cps", 3306)
 
     ucList = dbut.fetch_list(
         "SELECT user_id,channel_id FROM cps.oem_game_channels WHERE channel_id BETWEEN 5509661 AND 5509735 LIMIT 10000")
@@ -40,4 +40,4 @@ if __name__ == '__main__':
     print(chanAndCompany)
     print('##################### ready 4 generating sql file!###########################')
     for cc in chanAndCompany:
-        print("UPDATE mcp_fr_info SET company='%s' WHERE id='%s'" % (cc[1], cc[0]))
+        print("UPDATE mcp_fr_info SET company='%s' WHERE id='%s';" % (cc[1], cc[0]))
