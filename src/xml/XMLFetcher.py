@@ -1,15 +1,21 @@
 #!/usr/bin/python3
 # Author: Chunk
 
-from xml.dom.minidom import parse
-import xml.dom.minidom
+import xml.etree.ElementTree as ET
 
-workBench_XML_path = ""
+workBench_XML_path = "/home/caikun/PycharmProjects/codeExecutor/src/resource/connection.xml"
+
+
+def fetch_from_work_bench(path):
+    arr = []
+    tree = ET.parse(path)
+    root = tree.getroot()
+    for v in root.iter('value'):
+        if 'hostIdentifier' == v.attrib.get('key'):
+            print(v.text.split('@', 1)[1])
+            arr.append(v.text.split('@', 1)[1])
+    return arr
+
 
 if __name__ == '__main__':
-    DOMTree = xml.dom.minidom.parse("/home/caikun/PycharmProjects/codeExecutor/src/resource/connection.xml")
-    collection = DOMTree.documentElement
-    if collection.hasAttribute("grt_format"):
-        print("Root element : %s" % collection.getAttribute("grt_format"))
-        movies = collection.getElementsBy
     print("====over===========")
